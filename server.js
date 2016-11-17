@@ -29,6 +29,9 @@ var server = http.createServer(function(req, res){
         //se llama al servidor static
        staticServer.serve(urlPath, res);
     }
+    if (typeof(handlers[urlPath]) === "function"){
+        handlers[urlPath](req, res);
+    }
     
 });
 
