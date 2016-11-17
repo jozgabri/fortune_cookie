@@ -14,11 +14,11 @@ exports.serve = function (url, res) {
             res.writeHead(404, {
                 'Content-Type': 'text/html'
             });
-            res.end('<h1>404 NOT FOUND')
+            res.end('<h1>404 NOT FOUND...</h1>')
         } else {
             //EXISTE
+            //declarar mime en una variable
             var mimeType = mime.lookup(urlPath);
-
             fs.readFile(urlPath, function (err, content) {
                 if (err) {
                     console.log(`Error al leer archivo ${err}`);
